@@ -1,13 +1,12 @@
-from apps.chat.models import Chat, Message
 from rest_framework import serializers
+
+from apps.chat.models import Chat, Message
 
 
 class ChatHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Chat
-        fields = ["id", "user", "timestamp"]
-
-    messages = serializers.SerializerMethodField()
+        fields = ["id", "timestamp"]
 
 
 class MessageSerializer(serializers.ModelSerializer):
