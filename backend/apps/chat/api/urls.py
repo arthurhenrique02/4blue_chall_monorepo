@@ -5,8 +5,8 @@ from apps.chat.api.viewsets import ChatsHistoryReadOnlyViewSet, MessageReadCreat
 
 router = DefaultRouter()
 
-router.register(r"chats/history", ChatsHistoryReadOnlyViewSet, basename="chats-history")
-router.register(r"chats/messages", MessageReadCreateViewSet, basename="messages")
+router.register(r"history", ChatsHistoryReadOnlyViewSet, basename="chats-history")
+router.register(r"messages", MessageReadCreateViewSet, basename="messages")
 
 urlpatterns = [
     path("", include(router.urls)),
