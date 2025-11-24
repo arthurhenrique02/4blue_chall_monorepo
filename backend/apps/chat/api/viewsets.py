@@ -48,32 +48,30 @@ class MessageReadCreateViewSet(
         else:
             chat = Chat.objects.create(user=self.request.user, timestamp=datetime.now())
 
+        user_name = (
+            f"{self.request.user.first_name} {self.request.user.last_name}".strip()
+        )
+
         messages = Message.objects.bulk_create(
             [
                 Message(
                     chat=chat,
-                    message=msg,
+                    content=msg,
                     sender="U",
                     timestamp=datetime.now(),
                 ),
                 Message(
                     chat=chat,
-                    message="This is a placeholder response from the system.",
+                    content=f"Obrigado por seu contato, {user_name}. Em breve responderemos.",
                     sender="S",
                     timestamp=datetime.now() + timedelta(seconds=1),
                 ),
             ]
         )
-
-        serializer = self.get_serializer(data=messages)
-        serializer.is_valid(raise_exception=True)
+        serializer = self.get_serializer(messages, many=True)
         headers = self.get_success_headers(serializer.data)
         return Response(
             {"chat_id": chat.id, "messages": serializer.data},
             headers=headers,
             status=status.HTTP_201_CREATED,
         )
-
-    # TODO: enable list to show messages for a particular chat uuid
-    def list(self, request, chat_id, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
