@@ -20,10 +20,24 @@ class ChatsHistoryReadOnlyViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         return self.queryset.filter(user=self.request.user).order_by("-timestamp")
 
+    def retrieve(self, request, *args, **kwargs):
+        chat = Chat.objects.filter(id=kwargs.get("pk"), user=self.request.user).first()
 
-class MessageReadCreateViewSet(
-    mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet
-):
+        if not chat:
+            return Response(
+                {"error": "Chat not found."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+        serializer = self.get_serializer(chat)
+
+        messages = Message.objects.filter(chat=chat).order_by("timestamp")
+        msg_serializer = MessageSerializer(messages, many=True)
+
+        return Response({"chat": serializer.data, "messages": msg_serializer.data})
+
+
+class MessageCreateViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
