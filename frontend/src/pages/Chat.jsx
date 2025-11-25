@@ -25,7 +25,7 @@ export default function Chat() {
         setMessages(r.data.messages)
       }).catch((err) => {
         console.error(err)
-        addToast(err?.message || 'Falha ao carregar histórico', { type: 'error' })
+        addToast(err?.response.data.error || 'Falha ao carregar histórico', { type: 'error' })
       })
     }
   }, [chatId, token])
@@ -40,8 +40,7 @@ export default function Chat() {
       setMessages((prev) => [...prev, ...r.data.messages])
       setText('')
     } catch (err) {
-      console.error(err)
-      addToast(err?.message || 'Ocorreu algum problema ao enviar. Tente novamente mais tarde', { type: 'error' })
+      addToast(err?.response.data.error || 'Ocorreu algum problema ao enviar. Tente novamente mais tarde', { type: 'error' })
     }
   }
 

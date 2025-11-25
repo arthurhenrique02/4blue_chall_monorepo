@@ -18,7 +18,7 @@ export default function Login() {
       }
     } catch (err) {
       console.error(err)
-      addToast(err?.message || 'Login error', { type: 'error' })
+      addToast(err?.response.data.error || 'Login error', { type: 'error' })
     }
   }
 
