@@ -77,7 +77,7 @@ class MessageCreateViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
                 Message(
                     chat=chat,
                     content=f"Obrigado por seu contato, {user_name}. Em breve responderemos.",
-                    sender="S",
+                    sender="B",
                     timestamp=datetime.now() + timedelta(seconds=1),
                 ),
             ]
