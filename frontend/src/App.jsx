@@ -1,7 +1,8 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
-
+import Chat from './pages/Chat'
+import Navbar from './components/Navbar'
 import { getToken } from './services/auth'
 
 function BaseLayout({ children }) {
@@ -22,7 +23,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      
+      <Route path="/chat" element={<ProtectedRoute><BaseLayout><Navbar /><Chat /></BaseLayout></ProtectedRoute>} />
     </Routes>
   )
 }
