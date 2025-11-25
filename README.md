@@ -93,22 +93,27 @@ Pronto, você já está pronto para acessar a aplicação. Basta acessar `http:/
 
 ## Fluxo
 - Ao acessar a aplicação, vocês poderá escolher entre 2 usuários:
-![alt text](image.png)
-    Ao clicar em um dos usuários, a aplicação fará uma requisição para o backend em busca do token do usuário
+    <img width="664" height="297" alt="image" src="https://github.com/user-attachments/assets/7fb07185-13c7-4a5f-900a-074a41904bba" />
+
+  Ao clicar em um dos usuários, a aplicação fará uma requisição para o backend em busca do token do usuário
 - Com sucesso ao logar, você será redirecionado para a página do chat, onde pode iniciar uma nova conversa
-![alt text](image-1.png)
+    <img width="899" height="730" alt="image-1" src="https://github.com/user-attachments/assets/dd797d9f-3168-4f83-ab45-a62ee2cbcbdd" />
+
 - inserindo o texto e clicando em 'Enviar' você será mantido na conversa que acabou de ser iniciada
-![alt text](image-2.png)
+    <img width="849" height="735" alt="image-2" src="https://github.com/user-attachments/assets/84f97dc9-c71e-4893-9aae-f5eb2aa3e439" />
+
     É possível enviar mais mensagens, ou iniciar uma nova conversa
 - Também podemos verificar o histórico de conversas clicando em 'Minhas conversas', no canto superior esquerdo:
-![alt text](image-3.png)
+    <img width="849" height="735" alt="image-3" src="https://github.com/user-attachments/assets/b93e7b5a-7fa2-41ab-ba79-ac89851eeba6" />
+
 - Nele você verá todas as conversas que teve em uma ordem cronológica
-![alt text](image-4.png)
+    <img width="918" height="316" alt="image-4" src="https://github.com/user-attachments/assets/db0a4879-ad17-4d9c-b36a-60b3ebbe546c" />
+
 - Por fim, o botão de 'Logout' serve para você desconectar da conta
-![alt text](image-5.png)
+    <img width="914" height="214" alt="image-5" src="https://github.com/user-attachments/assets/9a7f9b32-5736-4808-93cb-8ad6943bafe6" />
 
 ## Tabelas (banco de dados)
-![alt text](tabelas.png)
+    <img width="1920" height="1080" alt="tabelas" src="https://github.com/user-attachments/assets/6d17f264-acd9-402d-ac34-28119483cbda" />
 
 ### Chat
     Tabela definida para armazenar as informações dos chats criados, guardando dados como: id, usuário dono do chat e quando foi criado
