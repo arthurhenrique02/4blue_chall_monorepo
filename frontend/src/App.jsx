@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
 import Chat from './pages/Chat'
+import History from './pages/History'
 import Navbar from './components/Navbar'
 import { getToken } from './services/auth'
 
@@ -24,6 +25,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/chat" element={<ProtectedRoute><BaseLayout><Navbar /><Chat /></BaseLayout></ProtectedRoute>} />
+      <Route path="/history" element={<ProtectedRoute><BaseLayout><Navbar /><History /></BaseLayout></ProtectedRoute>} />
     </Routes>
   )
 }
