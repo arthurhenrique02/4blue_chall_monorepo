@@ -113,7 +113,7 @@ Pronto, você já está pronto para acessar a aplicação. Basta acessar `http:/
     <img width="914" height="214" alt="image-5" src="https://github.com/user-attachments/assets/9a7f9b32-5736-4808-93cb-8ad6943bafe6" />
 
 ## Tabelas (banco de dados)
-    <img width="1920" height="1080" alt="tabelas" src="https://github.com/user-attachments/assets/6d17f264-acd9-402d-ac34-28119483cbda" />
+<img width="1920" height="1080" alt="tabelas" src="https://github.com/user-attachments/assets/6d17f264-acd9-402d-ac34-28119483cbda" />
 
 ### Chat
     Tabela definida para armazenar as informações dos chats criados, guardando dados como: id, usuário dono do chat e quando foi criado
